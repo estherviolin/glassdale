@@ -1,6 +1,5 @@
-import {getCriminals, useCriminals} from "./criminals/CriminalProvider.js"
+import {CriminalList} from "./criminals/CriminalList.js"
+// import { OfficerList } from "./officers/OfficerList.js";
+// OfficerList()
 
-getCriminals().then(
-
-)
-useCriminals()
+CriminalList()

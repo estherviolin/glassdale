@@ -14,18 +14,10 @@ export const getCriminals = () => {
         .then(response => response.json())
         .then(
             parsedCriminals => {
-                //how to use map instead?
-                for(const criminal of parsedCriminals) {
-                console.table(`${criminal.name}
-                                ${criminal.age}
-                                ${criminal.conviction}
-                                ${new Date(criminal.incarceration.start).toLocaleDateString('en-US')}`
-                    )
                 criminals = parsedCriminals
             }
-        }
         )
+        
             
 }
 
-console.log(criminals)
