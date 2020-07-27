@@ -1,6 +1,7 @@
 import {useCriminals, getCriminals} from "./CriminalProvider.js";
 import {CriminalHTMLConverter} from "./CriminalHTMLConverter.js";
 import {useConvictions} from "../convictions/ConvictionProvider.js"
+import { useOfficers } from "../officers/OfficerProvider.js";
 
 
 
@@ -27,10 +28,37 @@ eventHub.addEventListener("crimeSelected", (crimeSelectedEvent) => {
 
     //filter criminal array to only those with matching 'conviction' property value
     const allCriminals = useCriminals()
-
-    const filteredCriminals = allCriminals. filter(
+    const filteredCriminals = allCriminals.filter(
         (criminalObj) => {
             return foundCrimeObject.name === criminalObj.conviction
+        }  
+        ) //returns array of objects of filtered criminals
+
+        //adds to DOM:
+        render(filteredCriminals)
+    
+})
+
+//listens for custom event
+eventHub.addEventListener("officerSelected", (officerSelectedEvent) => {
+  
+    const officerSelected = officerSelectedEvent.detail.officer
+    
+    const officers = useOfficers()
+    const foundOfficerObj = officers.find(
+        (officerObj) => {
+            return parseInt(officerSelected) === officerObj.id
+        }
+
+        //returns officer object {name: "officer", id: num}
+
+)
+
+    //filter criminal array to only those with matching 'arrestingOfficer' property value
+    const allCriminals = useCriminals()
+    const filteredCriminals = allCriminals.filter(
+        (criminalObj) => {
+            return foundOfficerObj.name === criminalObj.arrestingOfficer
         }  
         ) //returns array of objects of filtered criminals
 
