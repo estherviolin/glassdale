@@ -12,12 +12,13 @@ contentTarget.addEventListener("change", (changeEvent) => {
             crimeId: changeEvent.target.value
         }
     })
-
+    console.log("ConvictionSelect: dispatch custom crimeSelected event")
     eventHub.dispatchEvent(customEvent)
 
 })
 
 const render = convictionsCollection => {
+    console.log("ConvictionSelect: Conviction select rendered to DOM")
     /*
         Use interpolation here to invoke the map() method on
         the convictionsCollection to generate the option elements.
@@ -40,6 +41,7 @@ const render = convictionsCollection => {
 
 
 export const ConvictionSelect = () => {
+    console.log("ConvictionSelect: convictions rendered to DOM on initial page load")
     //get all convictions from application state
     getConvictions()
         .then(() => {

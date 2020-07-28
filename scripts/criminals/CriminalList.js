@@ -10,6 +10,7 @@ const eventHub = document.querySelector(".container")
 
 //listens for custom event
 eventHub.addEventListener("crimeSelected", (crimeSelectedEvent) => {
+    console.log("CriminalList: custom crimeSelected event heard on event hub")
     //filter displayed criminals by the crime that was chosen
 
     //which crime was chosen
@@ -40,6 +41,7 @@ eventHub.addEventListener("crimeSelected", (crimeSelectedEvent) => {
 
 //listens for custom event
 eventHub.addEventListener("officerSelected", (officerSelectedEvent) => {
+    console.log("CriminalList: custom officerSelected event heard on event hub")
   
     const officerSelected = officerSelectedEvent.detail.officer
 
@@ -59,6 +61,7 @@ eventHub.addEventListener("officerSelected", (officerSelectedEvent) => {
 
 //function to render to DOM
 const render = (arrayOfCriminals) => {
+    console.log("CriminalList: Rendered to DOM")
     let criminalHTMLReps = ""
     arrayOfCriminals.forEach(criminal => {
         criminalHTMLReps += CriminalHTMLConverter(criminal)

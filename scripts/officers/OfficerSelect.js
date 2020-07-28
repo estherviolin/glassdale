@@ -7,8 +7,9 @@ const eventHub = document.querySelector(".container")
 contentTarget.addEventListener("change", (changeEvent) => {
     
     if (changeEvent.target.id === "officerSelect") {
+        console.log("OfficerSelect: user chose officer")
         
-        // Get the id of the selected officer
+        // Get the name of the selected officer
         const selectedOfficer = changeEvent.target.value
         
         // Define a custom event
@@ -19,11 +20,13 @@ contentTarget.addEventListener("change", (changeEvent) => {
         })
 
         // Dispatch event to event hub
+        console.log("OfficerSelect: dispatch custom officerSelected event")
         eventHub.dispatchEvent(customEvent)
     }
 })
 
 const render = arrestingOfficerCollection => {
+    console.log("OfficerSelect: Officer select rendered to DOM")
 
     contentTarget.innerHTML += `
     <select class ="dropdown" id="officerSelect">
@@ -42,6 +45,7 @@ const render = arrestingOfficerCollection => {
 }
 
 export const OfficerSelect = () => {
+    console.log("OfficerSelect: officer select rendered on initial page load")
     //get all officers from application state
     getOfficers()
         .then(() => {
