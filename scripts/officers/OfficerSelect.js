@@ -7,10 +7,10 @@ const eventHub = document.querySelector(".container")
 contentTarget.addEventListener("change", (changeEvent) => {
     
     if (changeEvent.target.id === "officerSelect") {
-        // Get the name of the selected officer
+        
+        // Get the id of the selected officer
         const selectedOfficer = changeEvent.target.value
         
-
         // Define a custom event
         const customEvent = new CustomEvent("officerSelected", {
             detail: {
@@ -32,7 +32,7 @@ const render = arrestingOfficerCollection => {
             arrestingOfficerCollection.map(
                 officerObj => {
                
-                return `<option value="${officerObj.id}">${officerObj.name}</option>`
+                return `<option value="${officerObj.name}">${officerObj.name}</option>`
                 }
             ).join("")
             }
