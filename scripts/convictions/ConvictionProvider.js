@@ -1,3 +1,4 @@
+//array to be filled of convictions from API
 let convictions = []
 
 //function for copy of array
