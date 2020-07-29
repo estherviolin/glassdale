@@ -6,6 +6,8 @@
 }
 .criminalBox {
     border: .2rem solid gray;
+    color: #33363b;
+    background-color:#DFEFF0;
     flex-basis: 20%;
     width: 30%;
     height: auto;

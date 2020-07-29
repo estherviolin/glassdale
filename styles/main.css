@@ -1,15 +1,23 @@
 @import "./criminals.css";
 @import "./officers.css";
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+@import "./notes.css";
 
 
-body,
+body {
+  background-color: white;
+}
+header {
+  display: flex;
+  justify-content: center;
+
+}
 button,
 input,
 select,
 textarea {
 	color: #404040;
-	font-family: "Comfortaa", Arial, sans-serif;
+	font-family: sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
