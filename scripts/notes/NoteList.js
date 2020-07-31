@@ -10,8 +10,15 @@ const eventHub = document.querySelector(".container")
 //adding event listener to eventhub for when show notes button is clicked
 eventHub.addEventListener("showNotesClicked", noteButtonClicked => {
     NoteList()
-    //also render hdienotes button
+    //also render hidenotes button
     HideNoteButton()
+})
+
+//listen for change to app state and update HTML rendering
+eventHub.addEventListener("noteStateChanged", () => {
+    const newNotes = useNotes()
+    render(newNotes)
+    
 })
 
 //listen for hide note button to be clicked

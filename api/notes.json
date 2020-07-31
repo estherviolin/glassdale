@@ -39,6 +39,30 @@
       "content": "",
       "timestamp": 1596050866819,
       "id": 5
+    },
+    {
+      "title": "Test",
+      "author": "Esther",
+      "suspect": "",
+      "content": "Test to check if save note automatically updates HTML rendering",
+      "timestamp": 1596206773513,
+      "id": 6
+    },
+    {
+      "title": "Test",
+      "author": "Esther",
+      "suspect": "",
+      "content": "Test to check if save note automatically updates HTML rendering",
+      "timestamp": 1596206778074,
+      "id": 7
+    },
+    {
+      "title": "",
+      "author": "",
+      "suspect": "",
+      "content": "test to check save note button",
+      "timestamp": 1596207005340,
+      "id": 8
     }
   ]
 }
