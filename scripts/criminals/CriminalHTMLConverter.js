@@ -6,6 +6,18 @@ export const CriminalHTMLConverter = (criminalObj) => {
             <div>Crime: ${criminalObj.conviction}</div>
             <div>Term start: ${new Date(criminalObj.incarceration.start).toLocaleDateString('en-US')}</div>
             <div>Term end: ${new Date(criminalObj.incarceration.start).toLocaleDateString('en-US')}</div>
-        </section>
-    `
-}
+            <button id="associates--${criminalObj.id}">Associate Alibis</button>
+            <dialog class="alibiDialog--${criminalObj.id}">
+            
+            ${
+                criminalObj.known_associates.map(
+                    obj => {
+                    return `<div>Name: ${obj.name}</div>
+                            <div>Alibi: ${obj.alibi}</div>`
+    
+                    }).join("")
+                }
+                
+            </dialog>
+        </section>`
+            }

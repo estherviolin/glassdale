@@ -2,6 +2,7 @@ import {useCriminals, getCriminals} from "./CriminalProvider.js";
 import {CriminalHTMLConverter} from "./CriminalHTMLConverter.js";
 import {useConvictions} from "../convictions/ConvictionProvider.js"
 import { useOfficers } from "../officers/OfficerProvider.js";
+import { AlibiButton } from "./AlibiButton.js";
 
 
 
@@ -80,7 +81,9 @@ export const CriminalList = () => {
     getCriminals()
         .then(() => {
             const criminalArray = useCriminals()
-            render(criminalArray)
-       
+            render(criminalArray) 
         })
+        .then(AlibiButton)
+        
+       
 }
