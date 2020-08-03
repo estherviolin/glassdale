@@ -13,6 +13,11 @@ export const WitnessStatementList = () => {
                 witnessHTMLReps += WitnessHTMLConverter(witnessObj)
             })
 
-            contentTarget.innerHTML = witnessHTMLReps
+            contentTarget.innerHTML = `
+            <h2>Witness Statements:</h2
+            <div class="witnessList">
+            ${witnessHTMLReps}
+            </div>
+            `
         })
 }
