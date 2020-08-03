@@ -31,7 +31,7 @@ const render = () => {
         <h2 id="note--header">Notes:</h2>
         <input type="text" id="note--title" placeholder="Enter note title" />
         <input type="text" id="note--author" placeholder="Your name here" />
-        <input type="test" id="note--suspect" placeholder"Enter suspect involved" />
+        <input type="test" id="note--suspect" placeholder="Enter suspect involved" />
         <textarea id="note--content" placeholder="Note text here"></textarea>
         <button id="saveNote">Save Note</button>
     `
