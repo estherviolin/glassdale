@@ -1,7 +1,7 @@
 import { useWitnesses, getWitnesses } from "./WitnessDataProvider.js";
 import { WitnessHTMLConverter } from "./WitnessHTMLConverter.js";
 
-const contentTarget = document.querySelector(".criminalsContainer")
+const contentTarget = document.querySelector(".criminalsContainer") //because witness statements will take the place of the criminal list
 
 export const WitnessStatementList = () => {
 
