@@ -17,7 +17,7 @@ export const CriminalHTMLConverter = (criminalObj) => {
     
                     }).join("")
                 }
-                
+                <button id = "closeAssociates">Close</button>
             </dialog>
         </section>`
             }
