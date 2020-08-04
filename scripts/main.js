@@ -5,7 +5,7 @@ import {OfficerSelect} from "./officers/OfficerSelect.js"
 import {NoteForm} from "./notes/NoteForm.js"
 import {ShowNoteButton} from "./notes/NoteButton.js"
 import "./notes/NoteList.js"
-import {WitnessButton, WitnessStatementsEvent} from "./witnesses/WitnessStatements.js"
+import {WitnessButton} from "./witnesses/WitnessStatements.js"
 
 
 CriminalList()
@@ -15,4 +15,4 @@ OfficerSelect()
 NoteForm()
 ShowNoteButton()
 WitnessButton()
-WitnessStatementsEvent()
+// WitnessStatementsEvent()

@@ -3,8 +3,8 @@ import {CriminalHTMLConverter} from "./CriminalHTMLConverter.js";
 import {useConvictions} from "../convictions/ConvictionProvider.js"
 import { useOfficers } from "../officers/OfficerProvider.js";
 import { AlibiButton } from "./AlibiButton.js";
-
-
+import { HideWitnessButton, WitnessButton } from "../witnesses/WitnessStatements.js";
+import {WitnessStatementList} from "../witnesses/WitnessList.js"
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
@@ -84,6 +84,20 @@ export const CriminalList = () => {
             render(criminalArray) 
         })
         .then(AlibiButton)
+    
         
+        //add two more event listeners (witness and hide)
+    eventHub.addEventListener("WitnessStatementsClicked", WitnessStatementsClicked => {
+        let WitnessStatements = WitnessStatementList()
+            contentTarget.innerHTML = `
+            ${WitnessStatements}
+            `
+    })
+    eventHub.addEventListener("HideButtonClicked", HideClicked => {
+        WitnessButton()
+        const criminalArray = useCriminals()
+        render(criminalArray)
+
+    })       
        
 }
