@@ -16,25 +16,40 @@ export const WitnessButton = () => {
 
 }
 
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "witnessStatements") {
+        contentTarget.innerHTML = ''
+        const WitnessStatementsClicked = new CustomEvent("WitnessStatementsClicked")
+        eventHub.dispatchEvent(WitnessStatementsClicked)
+        HideWitnessButton()
+    }
+})
+
 export const HideWitnessButton = () => {
     hideButtonTarget.innerHTML = `
     <button id="hideWitnesses">Hide</button>
     `
-
 }
-
-//browser generated change event
-export const WitnessStatementsEvent = () => {
-    eventHub.addEventListener("click", (clickEvent) => {
-    if (clickEvent.target.id === "witnessStatements") {  
-        contentTarget.innerHTML = ``
-        WitnessStatementList()
-        HideWitnessButton()
-    }
-    else if (clickEvent.target.id === "hideWitnesses") {
-        hideButtonTarget.innerHTML = ``
-        WitnessButton()
-        CriminalList()
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "hideWitnesses") {
+        hideButtonTarget.innerHTML = ''
+        const HideClicked = new CustomEvent("HideButtonClicked")
+        eventHub.dispatchEvent(HideClicked)
     }
 })
-}
+
+//browser generated change event
+// export const WitnessStatementsEvent = () => {
+//     eventHub.addEventListener("click", (clickEvent) => {
+//     if (clickEvent.target.id === "witnessStatements") {  
+//         contentTarget.innerHTML = ``
+//         WitnessStatementList()
+//         HideWitnessButton()
+//     }
+//     else if (clickEvent.target.id === "hideWitnesses") {
+//         hideButtonTarget.innerHTML = ``
+//         WitnessButton()
+//         CriminalList()
+//     }
+// })
+// }
