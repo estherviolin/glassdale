@@ -24,6 +24,13 @@ export const getNotes = () => {
         })
 }
 
+export const deleteNote = noteId => {
+    return fetch(`http://localhost:8088/notes/${noteId}`, {
+        method: "DELETE"
+    })
+        .then(getNotes)
+}
+
 //function to save note after entered into form
 export const saveNote = (noteObj) => {
     const jsonNote = JSON.stringify(noteObj) //turn object into string/strings
