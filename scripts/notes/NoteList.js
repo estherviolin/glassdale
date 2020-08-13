@@ -3,6 +3,7 @@ import {getNotes, useNotes} from "./NoteDataProvider.js"
 import { NoteHTMLConverter } from "./NoteHTMLConverter.js"
 import { HideNoteButton } from "./HideNotes.js"
 import { ShowNoteButton } from "./NoteButton.js"
+import {useCriminals} from "../criminals/CriminalProvider.js"
 
 const contentTarget = document.querySelector(".noteListContainer")
 const eventHub = document.querySelector(".container")
@@ -40,12 +41,15 @@ export const NoteList = () => {
 
 //render function
 const render = (noteArray) => {
+    const criminals = useCriminals()
     //loop through note array and convert each obj to HTML
-    const allNotesAsHTML = noteArray.map(
-        (currentNoteObj) => {
-            return NoteHTMLConverter(currentNoteObj)
-        }
+    const allNotesAsHTML = noteArray.reverse().map(
+        (noteObj) => {
+            const relatedCriminal = criminals.find(criminal => criminal.id === noteObj.criminalId)
+            return NoteHTMLConverter(noteObj, relatedCriminal)
+          }
     ).join("") //get rid of commas
+    
 
     contentTarget.innerHTML = allNotesAsHTML //update the DOM
 }
