@@ -1,4 +1,4 @@
-import { saveNote } from "./NoteDataProvider.js"
+import { saveNote, useNotes } from "./NoteDataProvider.js"
 import { useCriminals, getCriminals } from "../criminals/CriminalProvider.js"
 
 const eventHub = document.querySelector(".container")
@@ -53,12 +53,15 @@ const render = () => {
                 })
             }
 
-
+            
         </select>
         <textarea id="note--content" placeholder="Note text here"></textarea>
-        <button id="saveNote">Save Note</button>
-    `
+        <button id="saveNote">Save Note</button>`
 }
+      
+   
+    
+
 
 export const NoteForm = () => {
     getCriminals()

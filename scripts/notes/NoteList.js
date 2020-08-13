@@ -1,5 +1,5 @@
 //module to make HTML list of array of note objects
-import {getNotes, useNotes} from "./NoteDataProvider.js"
+import {deleteNote, getNotes, useNotes} from "./NoteDataProvider.js"
 import { NoteHTMLConverter } from "./NoteHTMLConverter.js"
 import { HideNoteButton } from "./HideNotes.js"
 import { ShowNoteButton } from "./NoteButton.js"
@@ -28,6 +28,26 @@ eventHub.addEventListener("hideNotesClicked", hideButtonClicked => {
     contentTarget.innerHTML = `
     `
 
+})
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteNote--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+
+        /*
+            Invoke the function that performs the delete operation.
+
+            Once the operation is complete you should THEN invoke
+            useNotes() and render the note list again.
+        */
+       deleteNote(id).then(
+           () => {
+               const updatedNotes = useNotes()
+               const criminals = useCriminals()
+               render(updatedNotes, criminals)
+           }
+       )
+    }
 })
 
 //function to get and render notes as HTML
