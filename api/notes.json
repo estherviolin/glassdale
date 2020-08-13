@@ -1,196 +1,44 @@
 {
   "notes": [
     {
-      "id": 1,
-      "title": "note about felon",
-      "timestamp": "07/29/2020",
-      "author": "Suzie Police",
-      "content": "theory",
-      "suspect": "Bob"
-    },
-    {
-      "title": "Test",
+      "title": "testing criminalId",
       "author": "Esther",
-      "suspect": "suspect",
-      "content": "met with suspect",
-      "timestamp": 1596048514510,
-      "id": 2
+      "criminalId": 6,
+      "content": "test",
+      "timestamp": 1597329987668,
+      "id": 25
     },
     {
-      "title": "Test",
+      "title": "test",
       "author": "Esther",
-      "suspect": "suspect",
-      "content": "met with suspect",
-      "timestamp": 1596048516563,
-      "id": 3
+      "criminalId": 6,
+      "content": "",
+      "timestamp": 1597331694184,
+      "id": 26
     },
     {
-      "title": "Alek Hane",
-      "author": "",
-      "suspect": "",
-      "content": "disposing body bags",
-      "timestamp": 1596483567822,
-      "id": 4
+      "title": "testing new criminalId option",
+      "author": "Esther",
+      "criminalId": 9,
+      "content": "test",
+      "timestamp": 1597332293865,
+      "id": 27
     },
     {
-      "title": "Caroline Eichman",
-      "author": "",
-      "suspect": "",
-      "content": "disposing of body bags, convicted of fraud",
-      "timestamp": 1596483675350,
-      "id": 5
+      "title": "testing new criminalId option",
+      "author": "Esther",
+      "criminalId": 9,
+      "content": "test",
+      "timestamp": 1597332295515,
+      "id": 28
     },
     {
-      "title": "",
+      "title": "testing value 0",
       "author": "",
-      "suspect": "ashlynn buckridge",
-      "content": "alibi: walking dog",
-      "timestamp": 1596484170771,
-      "id": 6
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Monserrate Hand",
-      "content": "alibi: disposing body bags",
-      "timestamp": 1596484230196,
-      "id": 7
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Giselle VonRueden",
-      "content": "alibi: disposing body bags",
-      "timestamp": 1596484268981,
-      "id": 8
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Cecile Carter",
-      "content": "alibi: walking my dog",
-      "timestamp": 1596484339155,
-      "id": 9
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Cordie Carroll",
-      "content": "alibi: test driving a car, shredding paper",
-      "timestamp": 1596484392522,
-      "id": 10
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Murphy Strosin",
-      "content": "alibi: disposing of body bags",
-      "timestamp": 1596484443636,
-      "id": 11
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Gavin Nienow",
-      "content": "alibi: making bandanas",
-      "timestamp": 1596484522133,
-      "id": 12
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Mariah Mohr",
-      "content": "alibi: walking my dog",
-      "timestamp": 1596484643223,
-      "id": 13
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Thad Mayert",
-      "content": "alibi: making bandanas",
-      "timestamp": 1596484754190,
-      "id": 14
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Clair Romaguera",
-      "content": "alibi: shredding paper, test driving car, and disposing body bags",
-      "timestamp": 1596484832901,
-      "id": 15
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Dino Mante",
-      "content": "alibi: shredding paper, test driving car",
-      "timestamp": 1596484885187,
-      "id": 16
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Caroline Eichman",
-      "content": "alibi: disposing of body bags",
-      "timestamp": 1596484924873,
-      "id": 17
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Ismael Bartoletti",
-      "content": "alibi: creating bandanas",
-      "timestamp": 1596484952718,
-      "id": 18
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Katlyn Grady",
-      "content": "alibi: walking dog",
-      "timestamp": 1596485020178,
-      "id": 19
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Heloise Schum",
-      "content": "alibi: walking dog",
-      "timestamp": 1596485040732,
-      "id": 20
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Cade Quigly",
-      "content": "alibi: shredding paper, disposing of body bags",
-      "timestamp": 1596485075157,
-      "id": 21
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Alek Hane",
-      "content": "alibi: driving sports car, shredding paper, disposing of body bags",
-      "timestamp": 1596485123775,
-      "id": 22
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Harvey Powlowski",
-      "content": "alibi: shredding paper",
-      "timestamp": 1596485176024,
-      "id": 23
-    },
-    {
-      "title": "",
-      "author": "",
-      "suspect": "Emory Kuphal",
-      "content": "alibi: shredding paper",
-      "timestamp": 1596485193265,
-      "id": 24
+      "criminalId": 4,
+      "content": "",
+      "timestamp": 1597332560879,
+      "id": 29
     }
   ]
 }

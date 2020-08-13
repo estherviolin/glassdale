@@ -1,5 +1,5 @@
 import { saveNote } from "./NoteDataProvider.js"
-import { useCriminals } from "../criminals/CriminalProvider.js"
+import { useCriminals, getCriminals } from "../criminals/CriminalProvider.js"
 
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".noteFormContainer")
@@ -11,27 +11,27 @@ eventHub.addEventListener("click", clickEvent => {
         const noteTitle = document.querySelector("#note--title")
         const noteAuthor = document.querySelector("#note--author")
         const noteContent = document.querySelector("#note--content")
-
-    eventHub.addEventListener("change", changeEvent => {
-
-        if (changeEvent.target.id === "noteForm--criminal") {
-            const [prefix, criminalId] = changeEvent.target.value.split("--")
+        const noteCriminal = document.querySelector("#noteForm--criminal")
+       
+        const criminalId = parseInt(noteCriminal.value)
            
-            }
-
-    })
+        if (criminalId !== 0) {
 
         // Make a new object representation of a note
         const newNote = {
             title: noteTitle.value,
             author: noteAuthor.value,
-            criminalId: criminalId.value,
+            criminalId: parseInt(noteCriminal.value),
             content: noteContent.value,
             timestamp: Date.now()
         }
 
         // Change API state and application state
         saveNote(newNote)
+    }
+    else {
+        window.alert("Please select a criminal")
+    }
     }
 })
 
@@ -45,9 +45,10 @@ const render = () => {
         <select id="noteForm--criminal" class="criminalSelect">
             <option value="0">Please select a criminal...</option>
             ${
-                criminals.map(criminal => {
+                criminals.map(
+                    (criminal) => {
                     return `
-                    <option value="criminal--${criminal.id }">${criminal.name }</option>`
+                    <option value="${criminal.id }">${criminal.name}</option>`
 
                 })
             }
@@ -60,5 +61,10 @@ const render = () => {
 }
 
 export const NoteForm = () => {
-    render()
+    getCriminals()
+        .then(() => {
+            const criminals = useCriminals()
+            render(criminals)
+        })
+    
 }
