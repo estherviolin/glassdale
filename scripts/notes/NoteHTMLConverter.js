@@ -8,6 +8,7 @@ export const NoteHTMLConverter = (noteObj, relatedCriminal) => {
             <div class="note--suspect"> Suspect: ${relatedCriminal.name}</div>
             <div class="note--content"> Entry: ${noteObj.content}</div>
             <button id="deleteNote--${noteObj.id}">Delete</button>
+            <button id="edit--${noteObj.id}">Edit</button>
                         
          
         </section>

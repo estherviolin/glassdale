@@ -24,6 +24,20 @@ export const getNotes = () => {
         })
 }
 
+//function to edit a note
+export const editNote = (noteObj) => {
+    return fetch(`http://localhost:8088/notes/${noteObj.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(noteObj)
+    })
+    .then(getNotes)
+    .then(dispatchStateChangeEvent)
+        
+}
+
 export const deleteNote = noteId => {
     return fetch(`http://localhost:8088/notes/${noteId}`, {
         method: "DELETE"
