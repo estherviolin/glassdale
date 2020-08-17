@@ -28,7 +28,9 @@ export const deleteNote = noteId => {
     return fetch(`http://localhost:8088/notes/${noteId}`, {
         method: "DELETE"
     })
+    //don't need response => on delete operation
         .then(getNotes)
+        .then(dispatchStateChangeEvent)
 }
 
 //function to save note after entered into form

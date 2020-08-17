@@ -2,27 +2,11 @@
   "notes": [
     {
       "title": "test",
-      "author": "Esther",
+      "author": "test",
       "criminalId": 6,
-      "content": "",
-      "timestamp": 1597331694184,
-      "id": 26
-    },
-    {
-      "title": "testing new criminalId option",
-      "author": "Esther",
-      "criminalId": 9,
       "content": "test",
-      "timestamp": 1597332295515,
-      "id": 28
-    },
-    {
-      "title": "testing value 0",
-      "author": "",
-      "criminalId": 4,
-      "content": "",
-      "timestamp": 1597332560879,
-      "id": 29
+      "timestamp": 1597675835431,
+      "id": 30
     }
   ]
 }
