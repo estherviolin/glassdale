@@ -1,12 +1,28 @@
 {
   "notes": [
     {
-      "title": "test",
-      "author": "test",
-      "criminalId": 6,
-      "content": "test",
-      "timestamp": 1597675835431,
-      "id": 30
+      "title": "testing edit",
+      "author": "Esther",
+      "criminalId": 4,
+      "content": "testing edit",
+      "timestamp": 1597694377772,
+      "id": 31
+    },
+    {
+      "title": "new note",
+      "author": "new note",
+      "criminalId": 13,
+      "content": "new note",
+      "timestamp": 1597694411878,
+      "id": 32
+    },
+    {
+      "title": "new note edited",
+      "author": "new note edited",
+      "criminalId": 13,
+      "content": "new note edited",
+      "timestamp": 1597694423746,
+      "id": 33
     }
   ]
 }

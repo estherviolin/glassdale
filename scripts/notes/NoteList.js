@@ -30,6 +30,19 @@ eventHub.addEventListener("hideNotesClicked", hideButtonClicked => {
 
 })
 
+//event listener for edit button
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("edit--")) {
+        const [prompt, noteId] = clickEvent.target.id.split("--")
+        const editNoteClicked = new CustomEvent("editClicked", {
+            detail: {
+                noteId: parseInt(noteId)
+            }
+        })
+        eventHub.dispatchEvent(editNoteClicked)
+    }
+})
+
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("deleteNote--")) {
         const [prefix, id] = clickEvent.target.id.split("--")
