@@ -41,10 +41,12 @@ const render = () => {
             })
 
             contentTarget.innerHTML = `
-            <h2>Facilities:</h2
+            <h2>Facilities:</h2>
             <div class="facilityList">
+           
             ${facilityHTMLReps}
             </div>
+           
             `
         
     }
