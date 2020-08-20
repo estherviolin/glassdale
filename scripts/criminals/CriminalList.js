@@ -2,10 +2,12 @@ import {useCriminals, getCriminals} from "./CriminalProvider.js";
 import {CriminalHTMLConverter} from "./CriminalHTMLConverter.js";
 import {useConvictions} from "../convictions/ConvictionProvider.js"
 import { AlibiButton } from "./AlibiButton.js";
-import { HideWitnessButton, WitnessButton } from "../witnesses/WitnessStatements.js";
+import { WitnessButton } from "../witnesses/WitnessStatements.js";
 import {WitnessStatementList} from "../witnesses/WitnessList.js"
 import { getFacilities, useFacilities } from "../facility/FacilityProvider.js";
 import { getCriminalFacilities, useCriminalFacilities } from "../facility/CriminalFacilityProvider.js";
+import {FacilityList} from "../facility/FacilityList.js"
+import {FacilityButton} from "../facility/DisplayFacilitiesButton.js"
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
@@ -45,6 +47,12 @@ eventHub.addEventListener("HideButtonClicked", HideClicked => {
         render(criminalArray)
 
     })       
+
+eventHub.addEventListener("hideFacilitiesClicked", HideFacilitiesClicked => {
+    FacilityButton()
+    CriminalList()
+    
+    }) 
        
 
 //listens for custom event
@@ -85,6 +93,12 @@ eventHub.addEventListener("officerSelected", (officerSelectedEvent) => {
     render()
   
     
+})
+
+eventHub.addEventListener("facilitiesButtonClicked", (facilityClickedEvent) => {
+
+    FacilityList()
+
 })
 
 //function to render to DOM

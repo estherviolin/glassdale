@@ -27,7 +27,7 @@ eventHub.addEventListener("click", clickEvent => {
 
 export const HideWitnessButton = () => {
     hideButtonTarget.innerHTML = `
-    <button id="hideWitnesses">Hide</button>
+    <button id="hideWitnesses">Hide Witness Statements</button>
     `
 }
 eventHub.addEventListener("click", clickEvent => {
