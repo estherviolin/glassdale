@@ -14,7 +14,7 @@ export const WitnessStatementList = () => {
             })
 
             contentTarget.innerHTML = `
-            <h2>Witness Statements:</h2
+            <h2>Witness Statements:</h2>
             <div class="witnessList">
             ${witnessHTMLReps}
             </div>
