@@ -5,6 +5,8 @@ import { useOfficers } from "../officers/OfficerProvider.js";
 import { AlibiButton } from "./AlibiButton.js";
 import { HideWitnessButton, WitnessButton } from "../witnesses/WitnessStatements.js";
 import {WitnessStatementList} from "../witnesses/WitnessList.js"
+import { getFacilities, useFacilities } from "../facility/FacilityProvider.js";
+import { getCriminalFacilities, useCriminalFacilities } from "../facility/CriminalFacilityProvider.js";
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
@@ -61,11 +63,18 @@ eventHub.addEventListener("officerSelected", (officerSelectedEvent) => {
 })
 
 //function to render to DOM
-const render = (arrayOfCriminals) => {
+const render = (arrayOfCriminals, allFacilities, allRelationships) => {
     console.log("CriminalList: Rendered to DOM")
     let criminalHTMLReps = ""
-    arrayOfCriminals.forEach(criminal => {
-        criminalHTMLReps += CriminalHTMLConverter(criminal)
+    arrayOfCriminals.map(criminal => {
+
+        const facRelationshipForThisCriminal = allRelationships.filter(cf => cf.criminalId === criminal.id)
+
+        const facilities = facRelationshipForThisCriminal.map(cf => {
+            const matchingFacilityObj = allFacilities.find(facility => facility.id===cf.facilityId)
+            return matchingFacilityObj
+        })
+        criminalHTMLReps += CriminalHTMLConverter(criminal, facilities)
     })
     
     contentTarget.innerHTML = `
@@ -79,9 +88,13 @@ const render = (arrayOfCriminals) => {
 export const CriminalList = () => {
     
     getCriminals()
+        .then(getFacilities)
+        .then(getCriminalFacilities)
         .then(() => {
             const criminalArray = useCriminals()
-            render(criminalArray) 
+            const facilities = useFacilities()
+            const allRelationships = useCriminalFacilities()
+            render(criminalArray, facilities, allRelationships) 
         })
         .then(AlibiButton)
     

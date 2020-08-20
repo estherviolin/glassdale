@@ -1,4 +1,4 @@
-export const CriminalHTMLConverter = (criminalObj) => {
+export const CriminalHTMLConverter = (criminalObj, facilities) => {
     return `
         <section class ="criminalBox">
             <h3>${criminalObj.name}</h3>            
@@ -6,6 +6,12 @@ export const CriminalHTMLConverter = (criminalObj) => {
             <div>Crime: ${criminalObj.conviction}</div>
             <div>Term start: ${new Date(criminalObj.incarceration.start).toLocaleDateString('en-US')}</div>
             <div>Term end: ${new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')}</div>
+            <div>
+                <h2>Facilities</h2>
+                <ul>
+                    ${facilities.map(f => `<li>${f.facilityName}</li>`).join("")}
+                </ul>
+            </div>
             <button id="associates--${criminalObj.id}">Associate Alibis</button>
             <dialog class="alibiDialog--${criminalObj.id}">
             
