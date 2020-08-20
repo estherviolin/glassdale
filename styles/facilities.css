@@ -1,0 +1,18 @@
+.facilityList {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+   
+   
+    
+}
+.facilityBox {
+    border: .2rem solid gray;
+    color:#33363b;
+    background-color:#fbe3e8;
+    flex-basis: 20%;
+    width: 30%;
+    height: auto;
+    padding: .2rem;
+    margin: .5rem;
+}
